@@ -12,9 +12,8 @@ class PatternRecognition:
         """
         Check if data matches any known pattern.
         """
-        matches = [pattern for pattern in self.patterns if pattern in data]
-        return matches
-
+         matches = [pattern for pattern in self.patterns if pattern in data]
+         return [f"[{pattern}]" for pattern in matches] # 패턴을 대괄호로 묶어 더 추상적으로 표현
 # Example usage
 recognizer = PatternRecognition()
 recognizer.add_pattern("quantum")
